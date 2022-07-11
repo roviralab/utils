@@ -1,0 +1,29 @@
+parm 6jg1_g4g3g.top
+trajin din_1.nc 1 last 10
+trajin din_2.nc 1 last 10
+trajin din_3.nc 1 last 10
+trajin din_4.nc 1 last 10
+trajin din_5.nc 1 last 10
+trajin din_6.nc 1 last 10
+trajin din_7.nc 1 last 10
+trajin din_8.nc 1 last 10
+trajin din_9.nc 1 last 10
+trajin din_10.nc 1 last 10
+trajin din_11.nc 1 last 10
+trajin din_12.nc 1 last 10
+trajin din_13.nc 1 last 10
+trajin din_14.nc 1 last 10
+trajin din_15.nc 1 last 10
+strip :NAS,WAT
+cluster c1 \
+ kmeans clusters 10 randompoint maxit 500 \
+ rms :1-606@!@H= \
+ sieve 10 random \
+ out cnumvtime.dat \
+ summary summary.dat \
+ info info.dat \
+ cpopvtime cpopvtime.agr normframe \
+ repout rep repfmt pdb \
+ singlerepout singlerep.nc singlerepfmt netcdf \
+ avgout avg avgfmt pdb
+run
